@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+  body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-image: linear-gradient( darkblue,blue);
+  }
+  
+  * {
+    box-sizing: border-box;
+  }
+  
+  /* Style inputs */
+  input[type=text], select, textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #8d8b8b;
+    margin-top: 6px;
+    margin-bottom: 16px;
+    resize: vertical;
+  }
+  
+  input[type=submit] {
+    background-color: #04AA6D;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    cursor: pointer;
+  }
+  
+  input[type=submit]:hover {
+    background-color: #45a049;
+  }
+  
+  /* Style the container/contact section */
+  .container {
+    border-radius: 5px;
+   ;
+    padding-bottom:245px;
+    border: 5px black;
+  }
+  
+  /* Create two columns that float next to eachother */
+  .column {
+    float: left;
+    width: 50%;
+    margin-top: 6px;
+    padding: 20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  input[type=text]{background-color:rgb(210, 209, 209)}
+  input[type=textarea]{background-color:rgb(210, 209, 209)}
+  .row{display:flex;flex-direction:column;align-items:center;}
+  
+  /* Responsive layout - when the screen is less than 600px wide, make the two columns stack on top of each other instead of next to each other */
+  @media screen and (max-width: 600px) {
+    .column, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+  .bg-text {
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0, 0.4); /* Black w/opacity/see-through */
+    color: white;
+    font-weight: bold;
+    border: 3px solid #f1f1f1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    width: 80%;
+    padding: 20px;
+    
+  }
+  body { 
+                      background: url(back\ imagev.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover; 
+  -o-background-size: cover; 
+  background-size: cover;}
+  @media screen and (max-width: 600px) {
+              .bg-text {
+                  width: 100%;
+                  padding: 10px;
+              }
+          }
+  </style>
+</head>
+<body>
+
+<div class="container" style="border: 1px solid black; padding:0px 0px; padding-left:0px">
+  <div class="bg-text">
+    <div style="text-align:center">
+      <h2 style="color:white">Contact Us</h2>
+      <p style="color:white"> Got a Question? We'd love to hear from you. Send us a message <br>and we'll respond as soon as possible </p>
+    </div>
+    <div class="row">
+      <div class="column">
+        <form action="javascript:void(0);" onsubmit="return validateForm()">
+          <label for="fname" style="color: white;">  Name *</label>
+          <input type="text" id="fname" name="firstname" placeholder="Your name.." required>
+          <label for="lname" style="color: white;"> Email address *</label>
+          <input type="text" id="lname" name="lastname" placeholder="Your last name.." required>
+          <label for="subject" style="color:white;">Message *</label>
+          <textarea id="subject" name="subject" placeholder="Write your question here....." style="height:170px;background-color: rgb(209, 207, 207);" required></textarea>
+          <input type="submit" value="Send Message">
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  function validateForm() {
+    var firstName = document.getElementById("fname").value;
+    var email = document.getElementById("lname").value;
+    var message = document.getElementById("subject").value;
+
+    if (firstName === "" || email === "" || message === "") {
+      alert("All fields must be filled out");
+      return false;
+    }
+
+    // You can add more advanced validation here if needed
+
+    // Display a success message (you can replace this with your own logic)
+    alert("Your message has been sent successfully");
+
+    // Prevent the form from submitting (since we're handling the submission manually)
+    return false;
+  }
+</script>
+
+</body>
+</html>

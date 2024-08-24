@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Sign Up Form</title>
+    <style>
+          .main{
+   
+   height: 100%;
+   width: 100%;
+}
+.container{
+    height: 600px;
+   width: 1100px; 
+   position: fixed;
+       top: 50%;
+       left: 50%;
+       transform: translate(-50%, -50%);
+   background-color: aliceblue;
+   
+}
+body { 
+   background: url(back\ image\ signup\ \ page.jpeg) no-repeat center center fixed;
+-webkit-background-size: cover; 
+-o-background-size: cover; 
+background-size: cover;}
+.formcontainer{
+   top: 50%;
+   left: 50%;
+   margin-top: -500px;
+   margin-left: -50px;
+   margin-right: 200px;
+  
+}
+.form{
+display: flex;
+float: right;
+
+   
+}
+    </style>
+</head>
+
+<body>
+    <div class="main">
+        <div class="container">
+            <div class="pic">
+                <img src="C:\Users\Asus\OneDrive\Desktop\FEE\HTML PROJECT ST 2\back image.jpeg" height="600PX" width="40%">
+            </div>
+            <div class="form">
+                <form onsubmit="return validateForm()">
+                    <div class="formcontainer">
+                        <h1>Sign Up</h1>
+                        <p>Please fill in this form to create an account.</p>
+
+                        <label for="first"></label>
+                        <input type="text" placeholder="Name" name="first" id="first"
+                            style="border: 1px solid black; color: black; padding-top: 5px;padding-right:175px;" required>
+
+                        
+                        <br>
+
+                        <label for="email"></label>
+                        <input type="text" placeholder="Email " name="email" id="email"
+                            style="padding-right:175px; padding-top: 5px; border: 1px solid black; margin-top:10px;"
+                            required>
+                        <br>
+
+                        <label for="psw"></label>
+                        <input type="password" placeholder="New Password" name="psw" id="psw"
+                            style="border: 1px solid black; margin-top: 10px; padding-top: 5px;" required>
+
+                        <label for="psw-repeat"></label>
+                        <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat"
+                            style="border: 1px solid black; color: black; padding-top: 5px;" required>
+                        <br>
+
+                        <label>
+                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
+                            Remember me
+                        </label>
+
+                        <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
+                        </p>
+
+                        <div class="clearfix">
+                            <button type="submit"
+                                class="signupbtn"
+                                style="background-color:blue;padding-left:150px;padding-right:150px;padding-top:7px;padding-bottom:7px;">
+                                Sign Up
+                            </button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+      function validateForm() {
+          var firstName = document.getElementById("first").value;
+          var email = document.getElementById("email").value;
+          var password = document.getElementById("psw").value;
+          var confirmPassword = document.getElementById("psw-repeat").value;
+  
+          if (firstName === "" ||  email === "" || password === "" || confirmPassword === "") {
+              alert("All fields must be filled out");
+              return false;
+          }
+  
+          if (password !== confirmPassword) {
+              alert("Password and Confirm Password must match");
+              return false;
+          }
+  
+          // Display successful alert
+          alert("You have been signed in successfully");
+  
+          // Redirect to home page after alert is dismissed
+          window.location.href = 'file:///C:/Users/Asus/OneDrive/Desktop/FEE/HTML%20PROJECT%20ST%202/auctiondark.html';
+  
+          // Prevent the form from submitting (since we're handling the redirection manually)
+          return false;
+      }
+  </script>
+  
+</body>
+
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
