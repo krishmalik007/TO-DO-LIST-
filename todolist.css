@@ -19,7 +19,7 @@ body {
     align-items: center;
     width: 100%;
     max-width: 400px;
-    margin-left: 375px;
+    margin: 0 auto; /* Center horizontally */
     padding: 10px;
 }
 
@@ -69,8 +69,13 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-color: #343a40;
+  
     border-radius: 3px;
+}
+
+/* Center the search bar within the navbar */
+.navbar-nav {
+    margin: 0 auto; /* Center the nav links */
 }
 
 /* Task list styling */
@@ -102,9 +107,9 @@ h1 {
     font-size: 1.2rem;
 }
 
-.div1{
+.div1 {
     background-color: aliceblue;
-    padding:120px;
+    padding: 120px;
     margin-bottom: 0px;
 }
 
