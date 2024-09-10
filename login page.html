@@ -6,40 +6,144 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Responsive Sign Up Form</title>
     <style>
-          .main{
-   
-   height: 100%;
-   width: 100%;
-}
-.container{
-    height: 600px;
-   width: 1100px; 
-   position: fixed;
-       top: 50%;
-       left: 50%;
-       transform: translate(-50%, -50%);
-   background-color: aliceblue;
-   
-}
-body { 
-   background: url(back\ image\ signup\ \ page.jpeg) no-repeat center center fixed;
--webkit-background-size: cover; 
--o-background-size: cover; 
-background-size: cover;}
-.formcontainer{
-   top: 50%;
-   left: 50%;
-   margin-top: -500px;
-   margin-left: -50px;
-   margin-right: 200px;
-  
-}
-.form{
-display: flex;
-float: right;
+        * {
+            box-sizing: border-box;
+        }
 
-   
-}
+        body {
+            margin: 0;
+            padding: 0;
+            background: url('back image signup  page.jpeg') no-repeat center center fixed;
+            -webkit-background-size: cover;
+            -moz-background-size: cover;
+            -o-background-size: cover;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+        }
+
+        .main {
+            height: 100%;
+            width: 100%;
+        }
+
+        .container {
+            height: 600px;
+            width: 90%;
+            max-width: 1100px;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: aliceblue;
+            display: flex;
+            flex-wrap: wrap;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+        }
+
+        .pic {
+            flex: 1 1 40%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pic img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .form {
+            flex: 1 1 60%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .formcontainer {
+            width: 100%;
+        }
+
+        .formcontainer h1 {
+            font-size: 2rem;
+        }
+
+        .formcontainer p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+        }
+
+        .formcontainer input {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            display: inline-block;
+            border: 1px solid black;
+            box-sizing: border-box;
+        }
+
+        .clearfix button {
+            width: 100%;
+            padding: 10px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .clearfix button:hover {
+            background-color: darkblue;
+        }
+
+        /* Media Queries for Responsiveness */
+        @media (max-width: 768px) {
+            .container {
+                height: auto;
+                flex-direction: column;
+                width: 100%;
+            }
+
+            .pic {
+                display: none; /* Hide the image for smaller screens */
+            }
+
+            .formcontainer h1 {
+                font-size: 1.5rem;
+            }
+
+            .formcontainer p {
+                font-size: 0.9rem;
+            }
+
+            .formcontainer input {
+                font-size: 0.9rem;
+                padding: 8px;
+            }
+
+            .clearfix button {
+                padding: 8px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .formcontainer h1 {
+                font-size: 1.2rem;
+            }
+
+            .formcontainer p {
+                font-size: 0.8rem;
+            }
+
+            .formcontainer input {
+                font-size: 0.8rem;
+                padding: 7px;
+            }
+
+            .clearfix button {
+                padding: 7px;
+            }
+        }
     </style>
 </head>
 
@@ -47,7 +151,7 @@ float: right;
     <div class="main">
         <div class="container">
             <div class="pic">
-                <img src="back image.jpeg" height="600PX" width="40%">
+                <img src="back image.jpeg" alt="Sign Up Image">
             </div>
             <div class="form">
                 <form onsubmit="return validateForm()">
@@ -55,42 +159,23 @@ float: right;
                         <h1>Sign Up</h1>
                         <p>Please fill in this form to create an account.</p>
 
-                        <label for="first"></label>
-                        <input type="text" placeholder="Name" name="first" id="first"
-                            style="border: 1px solid black; color: black; padding-top: 5px;padding-right:175px;" required>
+                        <input type="text" placeholder="Name" name="first" id="first" required>
 
-                        
-                        <br>
+                        <input type="text" placeholder="Email " name="email" id="email" required>
 
-                        <label for="email"></label>
-                        <input type="text" placeholder="Email " name="email" id="email"
-                            style="padding-right:175px; padding-top: 5px; border: 1px solid black; margin-top:10px;"
-                            required>
-                        <br>
+                        <input type="password" placeholder="New Password" name="psw" id="psw" required>
 
-                        <label for="psw"></label>
-                        <input type="password" placeholder="New Password" name="psw" id="psw"
-                            style="border: 1px solid black; margin-top: 10px; padding-top: 5px;" required>
-
-                        <label for="psw-repeat"></label>
-                        <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat"
-                            style="border: 1px solid black; color: black; padding-top: 5px;" required>
-                        <br>
+                        <input type="password" placeholder="Confirm Password" name="psw-repeat" id="psw-repeat" required>
 
                         <label>
-                            <input type="checkbox" checked="checked" name="remember" style="margin-bottom:15px">
-                            Remember me
+                            <input type="checkbox" checked="checked" name="remember"> Remember me
                         </label>
 
                         <p>By creating an account you agree to our <a href="#" style="color:dodgerblue">Terms & Privacy</a>.
                         </p>
 
                         <div class="clearfix">
-                            <button type="submit"
-                                class="signupbtn"
-                                style="background-color:blue;padding-left:150px;padding-right:150px;padding-top:7px;padding-bottom:7px;">
-                                Sign Up
-                            </button>
+                            <button type="submit">Sign Up</button>
                         </div>
                     </div>
                 </form>
@@ -99,45 +184,33 @@ float: right;
     </div>
 
     <script>
-      function validateForm() {
-          var firstName = document.getElementById("first").value;
-          var email = document.getElementById("email").value;
-          var password = document.getElementById("psw").value;
-          var confirmPassword = document.getElementById("psw-repeat").value;
-  
-          if (firstName === "" ||  email === "" || password === "" || confirmPassword === "") {
-              alert("All fields must be filled out");
-              return false;
-          }
-  
-          if (password !== confirmPassword) {
-              alert("Password and Confirm Password must match");
-              return false;
-          }
-  
-          // Display successful alert
-          alert("You have been signed in successfully");
-  
-          // Redirect to home page after alert is dismissed
-          window.location.href = 'file:///C:/Users/Asus/OneDrive/Desktop/FEE/HTML%20PROJECT%20ST%202/auctiondark.html';
-  
-          // Prevent the form from submitting (since we're handling the redirection manually)
-          return false;
-      }
-  </script>
-  
+        function validateForm() {
+            var firstName = document.getElementById("first").value;
+            var email = document.getElementById("email").value;
+            var password = document.getElementById("psw").value;
+            var confirmPassword = document.getElementById("psw-repeat").value;
+
+            if (firstName === "" || email === "" || password === "" || confirmPassword === "") {
+                alert("All fields must be filled out");
+                return false;
+            }
+
+            if (password !== confirmPassword) {
+                alert("Password and Confirm Password must match");
+                return false;
+            }
+
+            // Display successful alert
+            alert("You have been signed in successfully");
+
+            // Redirect to home page after alert is dismissed
+            window.location.href = 'file:///C:/Users/Asus/OneDrive/Desktop/FEE/HTML%20PROJECT%20ST%202/auctiondark.html';
+
+            // Prevent the form from submitting (since we're handling the redirection manually)
+            return false;
+        }
+    </script>
+
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
